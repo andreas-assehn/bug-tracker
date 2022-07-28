@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/bugs')
+mongoose.createConnection('mongodb://localhost:27017/bugs')
 
 const bugSchema = new mongoose.Schema({
   title: {type: String, required: true},

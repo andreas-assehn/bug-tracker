@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/users')
+mongoose.createConnection('mongodb://localhost:27017/users')
 
 const userSchema = new mongoose.Schema({
   email: {type: String, required: true},
@@ -9,6 +9,6 @@ const userSchema = new mongoose.Schema({
   role: {type: String, required: true}
 })
 
-const User = mongoose.model('User', eventSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

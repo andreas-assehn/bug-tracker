@@ -1,5 +1,4 @@
 const Bug = require('../models/bugModel');
-const { options } = require('../router');
 
 exports.getBugs = async (req, res) => {
   try {
