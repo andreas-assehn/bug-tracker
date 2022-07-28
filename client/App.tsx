@@ -11,14 +11,14 @@ import AddBug from './components/AddBug';
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+export default function App({bugs}) {
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='HomeScreen'>
-        <Stack.Screen name='All bugs' component={HomeScreen} options={({ navigation }) => ({
+        <Stack.Screen name='All bugs' component={HomeScreen}  options={({ navigation }) => ({
           headerRight: () => (
-            <Button title='+' onPress={() => navigation.navigate('AddBug')} />
+            <Button title='+' onPress={() => navigation.navigate('AddBug', {bugs})} />
           )    
         })} />
         <Stack.Screen name='AddBug' component={AddBug}/>
