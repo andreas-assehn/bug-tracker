@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.createConnection('mongodb://localhost:27017/bugs')
+const { bugDB } = require('./');
 
 const bugSchema = new mongoose.Schema({
   title: {type: String, required: true},
@@ -10,6 +10,6 @@ const bugSchema = new mongoose.Schema({
   description: {type: String, required: true}
 })
 
-const Bug = mongoose.model('Bug', bugSchema);
+const Bug = bugDB.model('Bug', bugSchema);
 
 module.exports = Bug;
