@@ -1,12 +1,14 @@
 // @ts-nocheck
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 
-export default function Bug({ bug }) {
+export default function Bug({ bug, navigation }) {
   return (
-    <View style={styles.container}>
-      <Text>{bug.title}</Text>
-      <Text>Priority: {bug.priority}</Text>
-    </View>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('BugDetailsScreen')}>
+      <>
+        <Text>{bug.title}</Text>
+        <Text>Priority: {bug.priority}</Text>
+      </>
+    </TouchableOpacity>
   )
 }
 

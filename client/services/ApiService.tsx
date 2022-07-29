@@ -1,7 +1,11 @@
 // @ts-nocheck
 
+const BASE_URL = 'https://8622-80-62-116-88.eu.ngrok.io';
+
+exports.getBugs = () => fetch(BASE_URL + '/bugs');
+
 exports.addBug = newBug => {
-  return fetch('https://8622-80-62-116-88.eu.ngrok.io/addBug', {
+  return fetch(BASE_URL + '/addBug', {
     method: 'POST',
     headers: {'Content-type': 'application/json'},
     body: JSON.stringify(newBug)

@@ -2,14 +2,15 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import BugList from '../components/BugList';
+import { getBugs } from '../services/ApiService';
 
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
 
   const [bugs, setBugs] = useState([]);
 
   useEffect(() => {
-    fetch('https://8622-80-62-116-88.eu.ngrok.io/bugs')
+    getBugs()
       .then(response => response.json())
       .then(bugsList => setBugs(bugsList))
       .catch(e => console.log(e))
@@ -17,7 +18,7 @@ export default function HomeScreen() {
 
   return (
     <View>
-      <BugList bugs={bugs}></BugList>
+      <BugList bugs={bugs} navigation={navigation}></BugList>
     </View>
   )
 }

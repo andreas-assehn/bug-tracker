@@ -1,12 +1,14 @@
 // @ts-nocheck
 import Bug from './Bug';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default function BugList({ bugs }) {
+export default function BugList({ bugs, navigation }) {
   return (
-    <View style={styles.container}>
-      {bugs.map(bug => <Bug key={bug._id} bug={bug}></Bug>)}
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        {bugs.map(bug => <Bug key={bug._id} bug={bug} navigation={navigation}></Bug>)}
+      </View>
+    </ScrollView>
   )
 }
 
