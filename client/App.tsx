@@ -21,11 +21,14 @@ export default function App({ setBugs }) {
           component={HomeScreen}
           options={({ navigation }) => ({headerRight: () => (
             <Button title='+' onPress={() => navigation.navigate('AddBugScreen', {setBugs})} />
-          )    
-          })}
+          )})}
         />
         <Stack.Screen name='AddBugScreen' component={AddBug} options={{title: 'New bug'}} />
-        <Stack.Screen name='BugDetailsScreen' component={BugDetailsScreen} options={{title: 'Details'}} />
+        <Stack.Screen name='BugDetailsScreen' component={BugDetailsScreen}
+          options={{title: 'Details'}, ({ navigation }) => ({headerRight: () => (
+            <Button title='Edit' onPress={() => navigation.navigate('AddBugScreen', {setBugs})} />
+          )})}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
