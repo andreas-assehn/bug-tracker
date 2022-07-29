@@ -5,7 +5,7 @@ export default function Bug({bug}) {
   return (
     <View style={styles.container}>
       <Text>{bug.title}</Text>
-      <Text>{bug.priority}</Text>
+      <Text>Priority: {bug.priority}</Text>
     </View>
   )
 }

@@ -9,9 +9,10 @@ export default function HomeScreen() {
   const [bugs, setBugs] = useState([]);
 
   useEffect(() => {
-    fetch('https://4a40-80-62-116-88.eu.ngrok.io/bugs')
+    fetch('https://8622-80-62-116-88.eu.ngrok.io/bugs')
       .then(response => response.json())
       .then(bugsList => setBugs(bugsList))
+      .catch(e => console.log(e))
   }, [])
 
   return (
