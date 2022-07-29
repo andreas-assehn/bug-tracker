@@ -2,24 +2,28 @@
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
+import { addBug } from '../services/ApiService';
 
 
-export default function AddBug() {
+export default function AddBug({navigation}) {
 
-  // const initialState = {priority: '', status: ''}
   const [newBug, setNewBug] = useState();
   const [priority, setPriority] = useState();
   const [status, setStatus] = useState();
+
+  const handleSubmit = function() {
+    return addBug(newBug);
+  }
 
   return (
     <View>
       <TextInput
         placeholder='Title'
-        onChangeText={text => setNewBug({title: text})}
+        onChangeText={text => setNewBug({...newBug, title: text})}
       />
       <Picker
         selectedValue={priority}
-        onValueChange={value => {setPriority(value), setNewBug({priority: value})}}
+        onValueChange={value => {setPriority(value), setNewBug({...newBug, priority: value})}}
       >
         <Picker.Item label='Select priority'/>
         <Picker.Item label='High' value='High'/>
@@ -28,11 +32,11 @@ export default function AddBug() {
       </Picker>
       <TextInput
         placeholder='Assigned to'
-        onChangeText={text => setNewBug({assignedTo: text})}
+        onChangeText={text => setNewBug({...newBug, assignedTo: text})}
         />
       <Picker
         selectedValue={status}
-        onValueChange={value => {setStatus(value), setNewBug({status: value})}}
+        onValueChange={value => {setStatus(value), setNewBug({...newBug, status: value})}}
       >
         <Picker.Item label='Select status'/>
         <Picker.Item label='In limbo' value='In limbo'/>
@@ -41,13 +45,13 @@ export default function AddBug() {
       </Picker>
       <TextInput
         placeholder='Opened by'
-        onChangeText={text => setNewBug({openedBy: text})}
+        onChangeText={text => setNewBug({...newBug, openedBy: text})}
         />
       <TextInput
         placeholder='Description'
-        onChangeText={text => setNewBug({description: text})}
-        />
-        <Button title='Submit' onPress={() => handleSubmit()}/>
+        onChangeText={text => setNewBug({...newBug, description: text})}
+      />
+      <Button title='Submit' onPress={() => {handleSubmit(), navigation.goBack()}}/>
     </View>
   )
 }
