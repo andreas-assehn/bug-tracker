@@ -47,6 +47,7 @@ export default function AddBug() {
         placeholder='Description'
         onChangeText={text => setNewBug({description: text})}
         />
+        <Button title='Submit' onPress={() => handleSubmit()}/>
     </View>
   )
 }
