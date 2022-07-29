@@ -5,19 +5,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import BugDetailsScreen from './screens/BugDetailsScreen';
-import AddBug from './components/AddBug';
+import AddBug from './screens/AddBugScreen';
 
 
 const Stack = createNativeStackNavigator();
 
-export default function App({setBugs}) {
+export default function App({ setBugs }) {
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='HomeScreen'>
         <Stack.Screen name='All bugs' component={HomeScreen}  options={({ navigation }) => ({
           headerRight: () => (
-            <Button title='+' onPress={() => navigation.navigate('Add Bug', {setBugs, navigation})} />
+            <Button title='+' onPress={() => navigation.navigate('Add Bug', {setBugs})} />
           )    
         })} />
         <Stack.Screen name='Add Bug' component={AddBug}/>

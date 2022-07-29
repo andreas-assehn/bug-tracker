@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { addBug } from '../services/ApiService';
 
 
-export default function AddBug({navigation}) {
+export default function AddBug({ navigation }) {
 
   const [newBug, setNewBug] = useState();
   const [priority, setPriority] = useState();
