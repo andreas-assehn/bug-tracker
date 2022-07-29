@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 're
 
 export default function Bug({ bug, navigation }) {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('BugDetailsScreen')}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('BugDetailsScreen', {bug})}>
       <>
         <Text>{bug.title}</Text>
         <Text>Priority: {bug.priority}</Text>

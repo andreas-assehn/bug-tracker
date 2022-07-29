@@ -11,3 +11,11 @@ exports.addBug = newBug => {
     body: JSON.stringify(newBug)
   }).catch(e => console.log(e))
 }
+
+exports.deleteBug = bug => {
+  return fetch(BASE_URL + '/deleteBug', {
+    method: 'DELETE',
+    headers: {'Content-type': 'application/json'},
+    body: JSON.stringify(bug)
+  }).catch(e => console.log(e))
+}
