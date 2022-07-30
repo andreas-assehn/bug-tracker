@@ -17,8 +17,14 @@ export default function HomeScreen({ navigation }) {
   }, [bugs])
 
   return (
-    <View>
+    <View style={styles.container}>
       <BugList bugs={bugs} navigation={navigation}></BugList>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
