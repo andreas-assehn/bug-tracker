@@ -8,9 +8,9 @@ import { checkFields } from '../services/helperService';
 
 export default function AddBug({ navigation, route }) {
 
-  const { bug } = route.params;
+  const { bugState } = route.params;
 
-  const [newBug, setNewBug] = useState(bug);
+  const [newBug, setNewBug] = useState(bugState);
   const [priority, setPriority] = useState();
   const [status, setStatus] = useState();
 
@@ -21,7 +21,7 @@ export default function AddBug({ navigation, route }) {
 
   const handleSubmit = function() {
     if (checkFields(newBug)) return
-    navigation.navigate({name: 'BugDetailsScreen', params: {newBug}});
+    navigation.navigate({name: 'BugDetailsScreen', params: {newBug: newBug}});
     return editBug(newBug);
   }
 
