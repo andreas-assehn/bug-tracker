@@ -1,6 +1,6 @@
 // @ts-nocheck
 import Bug from './Bug';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 
 export default function BugList({ bugs, navigation }) {

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
@@ -21,7 +21,9 @@ export default function App() {
           name='All bugs'
           component={HomeScreen}
           options={({ navigation }) => ({headerRight: () => (
-            <Button title='+' onPress={() => navigation.navigate('AddBugScreen')} />
+            <Pressable style={styles.button} onPress={() => navigation.navigate('AddBugScreen')} >
+              <Text style={styles.button}>+</Text>
+            </Pressable>
           )})}
         />
         <Stack.Screen name='AddBugScreen' component={AddBugScreen} options={{title: 'New bug'}} />
@@ -34,10 +36,13 @@ export default function App() {
 
 // REMEMBER CSS
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  button: {
+    backgroundColor: '#FFFFFF',
+    color: '#2C651E',
+    padding: 5,
+    borderRadius: 10,
+    fontWeight: 'bold',
+    fontSize: 30
+    
+  }
 });
