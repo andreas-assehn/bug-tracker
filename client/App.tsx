@@ -26,7 +26,7 @@ export default function App() {
         />
         <Stack.Screen name='AddBugScreen' component={AddBugScreen} options={{title: 'New bug'}} />
         <Stack.Screen name='EditBugScreen' component={EditBugScreen} options={{title: 'Edit bug'}} />
-        <Stack.Screen name='BugDetailsScreen' component={BugDetailsScreen}/>
+        <Stack.Screen name='BugDetailsScreen' component={BugDetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
