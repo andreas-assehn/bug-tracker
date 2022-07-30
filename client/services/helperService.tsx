@@ -12,7 +12,7 @@ exports.initialState = {
 
 exports.checkFields = function(obj) {
   for (const [key, value] of Object.entries(obj)) {
-    if (value === undefined || value === 'Select priority' || value === 'Select status') {
+    if (value === undefined || value === 'Select priority' || value === 'Select status' || value === '') {
       Alert.alert('All fields are required')
       return true;
     }
