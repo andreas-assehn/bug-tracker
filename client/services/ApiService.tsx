@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-const BASE_URL = 'https://8622-80-62-116-88.eu.ngrok.io';
+const BASE_URL = 'https://19f3-87-49-147-129.eu.ngrok.io';
 
 exports.getBugs = () => fetch(BASE_URL + '/bugs');
 
@@ -12,6 +12,14 @@ exports.addBug = newBug => {
   }).catch(e => console.log(e))
 }
 
+exports.editBug = bug => {
+  return fetch(BASE_URL + '/editBug', {
+    method: 'PUT',
+    headers: {'Content-type': 'application/json'},
+    body: JSON.stringify(bug)
+  }).catch(e => console.log(e))
+}
+
 exports.deleteBug = bug => {
   return fetch(BASE_URL + '/deleteBug', {
     method: 'DELETE',
@@ -19,3 +27,4 @@ exports.deleteBug = bug => {
     body: JSON.stringify(bug)
   }).catch(e => console.log(e))
 }
+

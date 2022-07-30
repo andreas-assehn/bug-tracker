@@ -1,12 +1,17 @@
 // @ts-nocheck
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { deleteBug } from '../services/ApiService';
+import { deleteBug, editBug } from '../services/ApiService';
+import { useState } from 'react';
 
 export default function BugDetailsScreen({ route, navigation } ) {
   
   const { bug } = route.params;
 
-  const handleSubmit = function() {
+  const handleEditSubmit = function() {
+    return editBug(bug);
+  }
+
+  const handleDeleteSubmit = function() {
     return deleteBug(bug);
   }
 
@@ -18,7 +23,8 @@ export default function BugDetailsScreen({ route, navigation } ) {
       <Text>{bug.status}</Text>
       <Text>{bug.openedBy}</Text>
       <Text>{bug.description}</Text>
-      <Button title='Delete' onPress={() => {handleSubmit(), navigation.goBack()}}/>
+      <Button title='Edit' onPress={() => {handleEditSubmit(), navigation.navigate('EditBugScreen', {bug})}}/>
+      <Button title='Delete' onPress={() => {handleDeleteSubmit(), navigation.goBack()}}/>
     </View>
   )
 }

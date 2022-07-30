@@ -1,17 +1,19 @@
 // @ts-nocheck
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
 import { addBug } from '../services/ApiService';
-
+import { initialState, checkFields } from '../services/helperService';
 
 export default function AddBug({ navigation }) {
 
-  const [newBug, setNewBug] = useState();
+  const [newBug, setNewBug] = useState(initialState);
   const [priority, setPriority] = useState();
   const [status, setStatus] = useState();
 
   const handleSubmit = function() {
+    if (checkFields(newBug)) return
+    navigation.goBack()
     return addBug(newBug);
   }
 
@@ -51,7 +53,7 @@ export default function AddBug({ navigation }) {
         placeholder='Description'
         onChangeText={text => setNewBug({...newBug, description: text})}
       />
-      <Button title='Submit' onPress={() => {handleSubmit(), navigation.goBack()}}/>
+      <Button title='Submit' onPress={() => {handleSubmit()}}/>
     </View>
   )
 }
