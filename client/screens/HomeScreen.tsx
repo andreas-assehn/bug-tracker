@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
       .then(response => response.json())
       .then(bugsList => setBugs(bugsList))
       .catch(e => console.log(e))
-  }, [bugs])
+  })
 
   return (
     <View style={styles.container}>

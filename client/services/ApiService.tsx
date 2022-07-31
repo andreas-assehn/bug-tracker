@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-const BASE_URL = 'https://19f3-87-49-147-129.eu.ngrok.io';
+const BASE_URL = 'https://f5e7-87-49-147-129.eu.ngrok.io';
 
 exports.getBugs = () => fetch(BASE_URL + '/bugs');
 

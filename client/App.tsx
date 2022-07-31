@@ -13,7 +13,6 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='All bugs'>
@@ -34,7 +33,6 @@ export default function App() {
   );
 }
 
-// REMEMBER CSS
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#FFFFFF',
