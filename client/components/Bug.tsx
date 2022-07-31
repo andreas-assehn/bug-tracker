@@ -1,49 +1,22 @@
 // @ts-nocheck
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { globalStyles } from '../services/styles';
 
 export default function Bug({ bug, navigation }) {
   return ( 
-    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('BugDetailsScreen', {bug})}>
-      <View style={styles.row1} >
+    <TouchableOpacity style={globalStyles.bugContainer} onPress={() => navigation.navigate('BugDetailsScreen', {bug})}>
+      <View style={globalStyles.row1} >
         <View>
-          <Text style={styles.title}>{bug.title}</Text>
+          <Text style={globalStyles.bugTitle}>{bug.title}</Text>
         </View>
         <View style={{flex:1}}></View>
-        <View style={styles.rightSide}>
-          <Text style={styles.boldText}>{bug.priority} priority</Text>
+        <View style={globalStyles.rightSide}>
+          <Text style={globalStyles.boldText}>{bug.priority} priority</Text>
         </View>
       </View>
-      <Text style={styles.whiteText}>Assigned to: {bug.assignedTo}</Text>
-      <Text style={styles.whiteText}>Status: {bug.status}</Text>
+      <Text style={globalStyles.whiteText}>Assigned to: {bug.assignedTo}</Text>
+      <Text style={globalStyles.whiteText}>Status: {bug.status}</Text>
     </TouchableOpacity>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#2C651E',
-    margin: '2%',
-    marginBottom: '0%',
-    padding: '3%',
-    borderRadius: 10,
-  },
-  row1: {
-    flexDirection: 'row'
-  },
-
-  title: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    paddingBottom: '2%',
-    color: '#EFEFEF'
-    
-  },
-  boldText: {
-    fontWeight: 'bold',
-    color: '#EFEFEF'
-  },
-  whiteText: {
-    color: '#EFEFEF'
-  }
-})

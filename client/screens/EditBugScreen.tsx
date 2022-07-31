@@ -1,9 +1,10 @@
 // @ts-nocheck
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { View, Button, TextInput } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useEffect, useState } from 'react';
 import { editBug } from '../services/ApiService';
 import { checkFields } from '../services/helperService';
+import { globalStyles } from '../services/styles';
 
 
 export default function AddBug({ navigation, route }) {
@@ -26,7 +27,7 @@ export default function AddBug({ navigation, route }) {
   }
 
   return (
-    <View>
+    <View style={globalStyles.container}>
       <TextInput
         placeholder='Title'
         value={newBug.title}

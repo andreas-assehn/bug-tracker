@@ -1,7 +1,8 @@
 // @ts-nocheck
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import { deleteBug, editBug } from '../services/ApiService';
 import { useEffect, useState } from 'react';
+import { globalStyles } from '../services/styles';
 
 export default function BugDetailsScreen({ route, navigation } ) {
   
@@ -24,7 +25,7 @@ export default function BugDetailsScreen({ route, navigation } ) {
   }
 
   return (
-    <View>
+    <View style={globalStyles.container}>
       <Text>{bugState.title}</Text>
       <Text>{bugState.priority}</Text>
       <Text>{bugState.assignedTo}</Text>
