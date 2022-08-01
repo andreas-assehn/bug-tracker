@@ -31,7 +31,7 @@ export default function BugDetailsScreen({ route, navigation } ) {
         <Text style={globalStyles.bugTitle}>{bugState.title}</Text>
         <View style={{flex:1}}></View>
         <View style={globalStyles.rightSide}>
-          <Text style={globalStyles.boldText}>{bugState.priority} priority</Text>
+          <Text style={globalStyles.rightSide}>{bugState.priority} priority</Text>
         </View>
       </View>
         <Text style={globalStyles.bugDetailsText}><Text style={globalStyles.boldText}>Assigned to: </Text>{bugState.assignedTo}</Text>

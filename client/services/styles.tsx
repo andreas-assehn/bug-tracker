@@ -42,6 +42,11 @@ export const globalStyles = StyleSheet.create({
     color: '#EFEFEF',
     fontSize: 15,
   },
+  rightSide: {
+    fontWeight: 'bold',
+    color: '#EFEFEF',
+    fontsize: 17
+  },
   bugSubmitButton: {
     width: '24%',
     left: '38%',
@@ -69,19 +74,19 @@ export const globalStyles = StyleSheet.create({
   },
   bugDetailsText: {
     color: '#EFEFEF',
-    fontSize: 15,
+    fontSize: 17,
     lineHeight: 40,
   },
   bugDetailsTextBold: {
     color: '#EFEFEF',
-    fontSize: 15,
+    fontSize: 17,
     lineHeight: 40,
     fontWeight: 'bold',
-    marginBottom: -10
+    marginBottom: -9
   },
   bugDetailsDescription: {
     color: '#EFEFEF',
-    fontSize: 15,
+    fontSize: 17,
     marginBottom: 15,
   },
   // LOGIN SCREEN
