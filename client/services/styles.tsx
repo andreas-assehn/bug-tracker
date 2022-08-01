@@ -85,6 +85,21 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 15,
   },
   // LOGIN SCREEN
+  register: {
+    marginTop: 10,
+    color: 'white',
+    fontSize: 15,
+    alignSelf: 'center',
+    textDecorationLine: 'underline',
+  },
+  registerTitle: {
+    position: 'absolute',
+    alignSelf: 'center',
+    marginBottom: '1020%',
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 40,
+  },
   login: {
     flex: 1,
     backgroundColor: '#161A77',

@@ -1,9 +1,10 @@
 // @ts-nocheck
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
-import { View, TextInput, Button, Alert, Text, Pressable } from 'react-native';
+import { View, TextInput, Button, Alert, Text } from 'react-native';
 import { globalStyles } from '../services/styles';
 import { useFonts } from 'expo-font'
+import RegisterScreen from './RegisterScreen';
 
 
 export default function Login() {
@@ -24,7 +25,6 @@ export default function Login() {
   }
 
   const [loaded] = useFonts({
-    Caveat: require('../assets/fonts/Caveat/static/Caveat-Bold.ttf'),
     Splash: require('../assets/fonts/Splash/Splash-Regular.ttf')
   });
 
@@ -39,22 +39,24 @@ export default function Login() {
           <Text style={{ fontFamily: 'Splash', color: 'white', fontSize: 65}}> beDone </Text>
         </View>
         <TextInput
-        style={globalStyles.loginInputText}
-        placeholder='Email'
-        placeholderTextColor={'white'}
-        onChangeText={text => setEmail(text)}
-        value={email}
+          style={globalStyles.loginInputText}
+          placeholder='Email'
+          placeholderTextColor={'white'}
+          onChangeText={text => setEmail(text)}
+          value={email}
         />
         <TextInput
-        style={globalStyles.loginInputText}
-        placeholder='Password'
-        placeholderTextColor={'white'}
-        onChangeText={text => setPassword(text)}
-        value={password}
+          secureTextEntry={true}
+          style={globalStyles.loginInputText}
+          placeholder='Password'
+          placeholderTextColor={'white'}
+          onChangeText={text => setPassword(text)}
+          value={password}
         />
         <View style={globalStyles.loginButtonWidth}>
           <Button title='Login' onPress={login} style={globalStyles.loginButton} color='#2C32C0' />
         </View>
+        <Text style={globalStyles.register} onPress={() => navigation.navigate('RegisterScreen')}>Register</Text>
       </View>
     </View>
   )
