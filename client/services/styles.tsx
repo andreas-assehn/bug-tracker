@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { StyleSheet } from "react-native";
 
+
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
@@ -41,10 +42,15 @@ export const globalStyles = StyleSheet.create({
     color: '#EFEFEF',
     fontSize: 15,
   },
+  bugSubmitButton: {
+    width: '24%',
+    left: '38%',
+    justifyContent: 'center',
+  },
   // ADD BUG SCREEN
   inputText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 17,
     marginBottom: 20,
   },
 
@@ -96,7 +102,7 @@ export const globalStyles = StyleSheet.create({
   loginTitle: {
     position: 'absolute',
     alignSelf: 'center',
-    marginTop: '250%',
+    marginBottom: '620%',
     color: 'white',
     fontWeight: 'bold',
     fontSize: 40,
@@ -110,4 +116,8 @@ export const globalStyles = StyleSheet.create({
     position: 'absolute',
     marginBottom: '100%',
   },
+  loginButtonWidth: {
+    width: '40%',
+    left: '30%'
+  }
 });

@@ -3,6 +3,8 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { View, TextInput, Button, Alert, Text, Pressable } from 'react-native';
 import { globalStyles } from '../services/styles';
+import { useFonts } from 'expo-font'
+
 
 export default function Login() {
 
@@ -21,11 +23,21 @@ export default function Login() {
     } else Alert.alert('Error', 'User does not exist')
   }
 
+  const [loaded] = useFonts({
+    Caveat: require('../assets/fonts/Caveat/static/Caveat-Bold.ttf'),
+    Splash: require('../assets/fonts/Splash/Splash-Regular.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
 
   return (
     <View style={globalStyles.loginBackground} >
       <View style={globalStyles.login}>
-        <Text style={globalStyles.loginTitle}>beDone</Text>
+        <View style={globalStyles.loginTitle}>
+          <Text style={{ fontFamily: 'Splash', color: 'white', fontSize: 65}}> beDone </Text>
+        </View>
         <TextInput
         style={globalStyles.loginInputText}
         placeholder='Email'
@@ -40,7 +52,9 @@ export default function Login() {
         onChangeText={text => setPassword(text)}
         value={password}
         />
-        <Button title='Login' onPress={login} style={globalStyles.loginButton} color='#2C32C0' />
+        <View style={globalStyles.loginButtonWidth}>
+          <Button title='Login' onPress={login} style={globalStyles.loginButton} color='#2C32C0' />
+        </View>
       </View>
     </View>
   )

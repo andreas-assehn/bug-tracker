@@ -23,31 +23,32 @@ export default function AddBug({ navigation }) {
       <View style={globalStyles.bugContainer}>
         <Text style={globalStyles.whiteText}>Title:</Text>
         <TextInput
-          placeholder=''
+          placeholder='Enter title...'
           placeholderTextColor={'white'}
           onChangeText={text => setNewBug({...newBug, title: text})}
           style={globalStyles.inputText}
         />
         <Text style={globalStyles.whiteText}>Assigned to:</Text>
         <TextInput
-          placeholder='Assigned to'
+          placeholder='Enter assignee...'
           placeholderTextColor={'white'}
           onChangeText={text => setNewBug({...newBug, assignedTo: text})}
           style={globalStyles.inputText}
           />
         <Text style={globalStyles.whiteText}>Opened by:</Text>
         <TextInput
-          placeholder='Opened by'
+          placeholder='Enter creator...'
           placeholderTextColor={'white'}
           onChangeText={text => setNewBug({...newBug, openedBy: text})}
           style={globalStyles.inputText}
           />
         <Text style={globalStyles.whiteText}>Description:</Text>
         <TextInput
-          placeholder='Description'
+          placeholder='Enter description...'
           placeholderTextColor={'white'}
           onChangeText={text => setNewBug({...newBug, description: text})}
           style={globalStyles.inputText} 
+          multiline = {true}
         />
         <Picker
           selectedValue={priority}
@@ -74,7 +75,9 @@ export default function AddBug({ navigation }) {
           <Picker.Item label='In progress' value='In progress'/>
           <Picker.Item label='Fixed' value='Fixed'/>
         </Picker>
-        <Button title='Submit' onPress={() => {handleSubmit()}}/>
+        <View style={globalStyles.bugSubmitButton}>
+          <Button color='#2C32C0' title='Submit' onPress={() => {handleSubmit()}}/>
+        </View>
       </View>
     </View>
   )

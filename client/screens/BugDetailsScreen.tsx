@@ -41,7 +41,7 @@ export default function BugDetailsScreen({ route, navigation } ) {
         <Text style={globalStyles.bugDetailsDescription}>{bugState.description}</Text>
         <View style={globalStyles.bugDetailsButtons}>
           <Button
-            color={'#6EC74F'}
+            color={'#2C32C0'}
             title='Edit'
             onPress={() => {handleEditSubmit(), navigation.navigate('EditBugScreen', {bugState})}}/>
           <Button
