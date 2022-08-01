@@ -20,21 +20,15 @@ export default function App() {
       <Stack.Navigator
         initialRouteName='Login'
         screenOptions={{
-          headerStyle: {backgroundColor: '#161A77'},
+          headerStyle: {backgroundColor: '#2C32C0'},
           headerTintColor: 'white',
           headerTitleAlign: 'center',
           statusBarStyle: 'white',
-          statusBarColor: '#161A77'
+          statusBarColor: '#2C32C0'
         }}
       >
-        <Stack.Screen name='Login' component={Login} options={{headerShown: false}} />
-        <Stack.Screen
-          name='All bugs'
-          component={HomeScreen}
-          options={{
-            title: 'All bugs',
-          }}
-        />
+        <Stack.Screen name='Login' component={Login} options={{headerShown: false, statusBarColor: '#161A77'}} />
+        <Stack.Screen name='All bugs' component={HomeScreen} options={{ title: 'All bugs' }} />
         <Stack.Screen name='AddBugScreen' component={AddBugScreen} options={{title: 'New bug'}} />
         <Stack.Screen name='EditBugScreen' component={EditBugScreen} options={{title: 'Edit bug'}} />
         <Stack.Screen name='BugDetailsScreen' component={BugDetailsScreen} options={{title: 'Details'}} />

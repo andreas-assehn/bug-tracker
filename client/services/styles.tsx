@@ -4,10 +4,10 @@ import { StyleSheet } from "react-native";
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2C32C0',
+    backgroundColor: '#161A77',
   },
   addButton: {
-    backgroundColor: '#161A77',
+    backgroundColor: '#2C32C0',
     color: 'white',
     paddingRight: 5,
     borderRadius: 10,
@@ -23,7 +23,7 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 10,
   },
   row1: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
 
   bugTitle: {
@@ -38,7 +38,45 @@ export const globalStyles = StyleSheet.create({
     color: '#EFEFEF'
   },
   whiteText: {
-    color: '#EFEFEF'
+    color: '#EFEFEF',
+    fontSize: 15,
+  },
+  // ADD BUG SCREEN
+  inputText: {
+    color: 'white',
+    fontSize: 18,
+    marginBottom: 20,
+  },
+
+  // BUG DETAILS SCREEN
+  bugDetailsContainer: {
+    backgroundColor: 'rgba(160, 160, 160, 0.65)',
+    marginTop: '4%',
+    margin: '2%',
+    marginBottom: '0%',
+    padding: '2%',
+    borderRadius: 10,
+  },
+  bugDetailsButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  bugDetailsText: {
+    color: '#EFEFEF',
+    fontSize: 15,
+    lineHeight: 40,
+  },
+  bugDetailsTextBold: {
+    color: '#EFEFEF',
+    fontSize: 15,
+    lineHeight: 40,
+    fontWeight: 'bold',
+    marginBottom: -10
+  },
+  bugDetailsDescription: {
+    color: '#EFEFEF',
+    fontSize: 15,
+    marginBottom: 15,
   },
   // LOGIN SCREEN
   login: {
@@ -52,7 +90,8 @@ export const globalStyles = StyleSheet.create({
   },
   loginInputText: {
     color: 'white',
-    fontSize: 18
+    fontSize: 18,
+    marginBottom: 20
   },
   loginTitle: {
     position: 'absolute',

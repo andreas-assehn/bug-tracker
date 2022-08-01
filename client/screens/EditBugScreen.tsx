@@ -52,7 +52,7 @@ export default function AddBug({ navigation, route }) {
         onValueChange={value => {setStatus(value), setNewBug({...newBug, status: value})}}
       >
         <Picker.Item label='Select status'/>
-        <Picker.Item label='In limbo' value='In limbo'/>
+        <Picker.Item label='To be fixed' value='To be fixed'/>
         <Picker.Item label='In progress' value='In progress'/>
         <Picker.Item label='Fixed' value='Fixed'/>
       </Picker>

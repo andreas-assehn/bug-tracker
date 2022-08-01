@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { View, Button, TextInput } from 'react-native';
+import { View, Button, TextInput, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
 import { addBug } from '../services/ApiService';
@@ -20,41 +20,62 @@ export default function AddBug({ navigation }) {
 
   return (
     <View style={globalStyles.container}>
-      <TextInput
-        placeholder='Title'
-        onChangeText={text => setNewBug({...newBug, title: text})}
-      />
-      <Picker
-        selectedValue={priority}
-        onValueChange={value => {setPriority(value), setNewBug({...newBug, priority: value})}}
-      >
-        <Picker.Item label='Select priority'/>
-        <Picker.Item label='High' value='High'/>
-        <Picker.Item label='Medium' value='Medium'/>
-        <Picker.Item label='Low' value='Low'/>
-      </Picker>
-      <TextInput
-        placeholder='Assigned to'
-        onChangeText={text => setNewBug({...newBug, assignedTo: text})}
+      <View style={globalStyles.bugContainer}>
+        <Text style={globalStyles.whiteText}>Title:</Text>
+        <TextInput
+          placeholder=''
+          placeholderTextColor={'white'}
+          onChangeText={text => setNewBug({...newBug, title: text})}
+          style={globalStyles.inputText}
         />
-      <Picker
-        selectedValue={status}
-        onValueChange={value => {setStatus(value), setNewBug({...newBug, status: value})}}
-      >
-        <Picker.Item label='Select status'/>
-        <Picker.Item label='In limbo' value='In limbo'/>
-        <Picker.Item label='In progress' value='In progress'/>
-        <Picker.Item label='Fixed' value='Fixed'/>
-      </Picker>
-      <TextInput
-        placeholder='Opened by'
-        onChangeText={text => setNewBug({...newBug, openedBy: text})}
+        <Text style={globalStyles.whiteText}>Assigned to:</Text>
+        <TextInput
+          placeholder='Assigned to'
+          placeholderTextColor={'white'}
+          onChangeText={text => setNewBug({...newBug, assignedTo: text})}
+          style={globalStyles.inputText}
+          />
+        <Text style={globalStyles.whiteText}>Opened by:</Text>
+        <TextInput
+          placeholder='Opened by'
+          placeholderTextColor={'white'}
+          onChangeText={text => setNewBug({...newBug, openedBy: text})}
+          style={globalStyles.inputText}
+          />
+        <Text style={globalStyles.whiteText}>Description:</Text>
+        <TextInput
+          placeholder='Description'
+          placeholderTextColor={'white'}
+          onChangeText={text => setNewBug({...newBug, description: text})}
+          style={globalStyles.inputText} 
         />
-      <TextInput
-        placeholder='Description'
-        onChangeText={text => setNewBug({...newBug, description: text})}
-      />
-      <Button title='Submit' onPress={() => {handleSubmit()}}/>
+        <Picker
+          selectedValue={priority}
+          onValueChange={value => {setPriority(value), setNewBug({...newBug, priority: value})}}
+          dropdownIconColor={'white'}
+          mode='dropdown'
+          style={{color: 'white'}}
+        >
+          <Picker.Item label='Select priority'/>
+          <Picker.Item label='High' value='High'/>
+          <Picker.Item label='Medium' value='Medium'/>
+          <Picker.Item label='Low' value='Low'/>
+        </Picker>
+        <Picker
+          selectedValue={status}
+          onValueChange={value => {setStatus(value), setNewBug({...newBug, status: value})}}
+          color={'white'}
+          dropdownIconColor={'white'}
+          mode='dropdown'
+          style={{color: 'white'}}
+        >
+          <Picker.Item label='Select status'/>
+          <Picker.Item label='To be fixed' value='To be fixed'/>
+          <Picker.Item label='In progress' value='In progress'/>
+          <Picker.Item label='Fixed' value='Fixed'/>
+        </Picker>
+        <Button title='Submit' onPress={() => {handleSubmit()}}/>
+      </View>
     </View>
   )
 }
