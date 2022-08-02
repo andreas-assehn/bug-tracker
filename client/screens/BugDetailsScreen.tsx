@@ -1,8 +1,10 @@
 // @ts-nocheck
+import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { deleteBug, editBug } from '../services/ApiService';
 import { useEffect, useState } from 'react';
 import { globalStyles } from '../services/styles';
+
 
 export default function BugDetailsScreen({ route, navigation } ) {
   
@@ -16,9 +18,7 @@ export default function BugDetailsScreen({ route, navigation } ) {
     }
   })
 
-  const handleEditSubmit = function() {
-    return editBug(bugState);
-  }
+
 
   const handleDeleteSubmit = function() {
     return deleteBug(bugState);
@@ -43,7 +43,7 @@ export default function BugDetailsScreen({ route, navigation } ) {
           <Button
             color={'#2C32C0'}
             title='Edit'
-            onPress={() => {handleEditSubmit(), navigation.navigate('EditBugScreen', {bugState})}}/>
+            onPress={() => {navigation.navigate('EditBugScreen', {bugState})}}/>
           <Button
             color={'#C23333'}
             title='Delete' onPress={() => {handleDeleteSubmit(), navigation.goBack()}}/>

@@ -14,7 +14,7 @@ export default function AddBug({ navigation }) {
 
   const handleSubmit = function() {
     if (checkFields(newBug)) return
-    navigation.goBack()
+    navigation.goBack();
     return addBug(newBug);
   }
 

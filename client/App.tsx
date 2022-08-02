@@ -7,7 +7,6 @@ import BugDetailsScreen from './screens/BugDetailsScreen';
 import AddBugScreen from './screens/AddBugScreen';
 import EditBugScreen from './screens/EditBugScreen';
 import Login from './screens/Login';
-import RegisterModal from './screens/RegisterScreen';
 import RegisterScreen from './screens/RegisterScreen';
 
 

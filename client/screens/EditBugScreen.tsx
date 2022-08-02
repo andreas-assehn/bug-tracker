@@ -22,7 +22,7 @@ export default function AddBug({ navigation, route }) {
 
   const handleSubmit = function() {
     if (checkFields(newBug)) return
-    navigation.navigate({name: 'BugDetailsScreen', params: {newBug: newBug}});
+    navigation.navigate({name: 'BugDetailsScreen', params: {newBug}});
     return editBug(newBug);
   }
 

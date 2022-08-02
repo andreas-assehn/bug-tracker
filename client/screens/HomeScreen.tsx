@@ -8,7 +8,7 @@ import { globalStyles } from '../services/styles';
 
 
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ route, navigation }) {
 
   const [bugs, setBugs] = useState([]);
   const [search, setSearch] = useState('');
@@ -18,11 +18,14 @@ export default function HomeScreen({ navigation }) {
       .then(response => response.json())
       .then(bugsList => setBugs(bugsList))
       .catch(e => console.log(e))
-  }, [])
-
-  useEffect(() => {
-
   })
+
+  // useEffect(() => {
+  //   if (route.params?.newBug) {
+  //     setBugs([...bugs, route.params.newBug])
+  //   }
+  // })
+
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
