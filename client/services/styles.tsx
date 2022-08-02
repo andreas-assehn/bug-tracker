@@ -45,7 +45,7 @@ export const globalStyles = StyleSheet.create({
   rightSide: {
     fontWeight: 'bold',
     color: '#EFEFEF',
-    fontsize: 17
+    fontSize: 15
   },
   bugSubmitButton: {
     width: '24%',
@@ -74,19 +74,19 @@ export const globalStyles = StyleSheet.create({
   },
   bugDetailsText: {
     color: '#EFEFEF',
-    fontSize: 17,
+    fontSize: 15,
     lineHeight: 40,
   },
   bugDetailsTextBold: {
     color: '#EFEFEF',
-    fontSize: 17,
+    fontSize: 15,
     lineHeight: 40,
     fontWeight: 'bold',
     marginBottom: -9
   },
   bugDetailsDescription: {
     color: '#EFEFEF',
-    fontSize: 17,
+    fontSize: 15,
     marginBottom: 15,
   },
   // LOGIN SCREEN
