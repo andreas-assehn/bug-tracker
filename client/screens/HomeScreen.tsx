@@ -18,11 +18,11 @@ export default function HomeScreen({ route, navigation }) {
       .then(response => response.json())
       .then(bugsList => setBugs(bugsList))
       .catch(e => console.log(e))
-  })
+  }, [])
 
   // useEffect(() => {
-  //   if (route.params?.newBug) {
-  //     setBugs([...bugs, route.params.newBug])
+  //   if (route.params?.bugRes) {
+  //     setBugs([...bugs, route.params.bugRes])
   //   }
   // })
 

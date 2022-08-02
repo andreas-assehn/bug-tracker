@@ -18,8 +18,6 @@ export default function BugDetailsScreen({ route, navigation } ) {
     }
   })
 
-
-
   const handleDeleteSubmit = function() {
     return deleteBug(bugState);
   }
