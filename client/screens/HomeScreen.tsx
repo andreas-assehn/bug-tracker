@@ -20,12 +20,13 @@ export default function HomeScreen({ route, navigation }) {
       .catch(e => console.log(e))
   }, [])
 
-  // useEffect(() => {
-  //   if (route.params?.bugRes) {
-  //     setBugs([...bugs, route.params.bugRes])
-  //   }
-  // })
-
+  useEffect(() => {
+    console.log('useEffect running!')
+    if (route.params?.newBug) {
+      console.log([...bugs, route.params.newBug])
+      setBugs([...bugs, route.params.newBug])
+    }
+  })
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -39,11 +40,15 @@ export default function HomeScreen({ route, navigation }) {
 
   return (
     <View style={globalStyles.container}>
-      <TextInput
-        placeholder='Search...'
-        onChangeText={setSearch}
-        value={search}
-      />
+      <View style={globalStyles.searchBarContainer}>
+        <TextInput
+          placeholder='Search...'
+          onChangeText={setSearch}
+          value={search}
+          placeholderTextColor={'white'}
+          style={globalStyles.searchBar}
+        />
+      </View>
       <BugList bugs={bugs} navigation={navigation}></BugList>
     </View>
   )

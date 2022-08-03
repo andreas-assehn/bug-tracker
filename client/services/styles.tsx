@@ -89,6 +89,22 @@ export const globalStyles = StyleSheet.create({
     fontSize: 15,
     marginBottom: 15,
   },
+  // searchBarContainer: {
+  //   width: '80%',
+  // },
+  searchBar: {
+    paddingLeft: 8,
+    marginTop: '2%',
+    left: '15%',
+    color: 'white',
+    height: 40,
+    width: '70%',
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 10,
+    backgroundColor: '#2C32C0',
+    fontSize: 15,
+  },
   // LOGIN SCREEN
   register: {
     marginTop: 10,

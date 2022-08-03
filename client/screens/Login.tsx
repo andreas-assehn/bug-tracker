@@ -27,7 +27,6 @@ export default function Login() {
   const [loaded] = useFonts({
     Splash: require('../assets/fonts/Splash/Splash-Regular.ttf')
   });
-
   if (!loaded) {
     return null;
   }
