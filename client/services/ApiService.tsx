@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-const BASE_URL = 'https://89b0-87-49-147-129.eu.ngrok.io';
+const BASE_URL = 'ADD NGROK HTTPS TUNNEL HERE';
 
 exports.getBugs = () => fetch(BASE_URL + '/bugs').catch(e => console.log(e));
 
